@@ -8,15 +8,17 @@
 					<div>
 						<ul>
 							<li ng-repeat="item in items">
-								<a ><img ng-src="{{item.image}}" alt="Image"></a>
-								<div>
-									<a >{{item.name}}</a>
-									<p >
-										Lorem ipsum &#36;{{item.price}}
-									<input type="number" style=" position: absolute;margin-left:-140px;margin-top:30px" placeholder="how many Piece">
-									</p>
-
-								</div>
+								<input type="number" style=" position: absolute;margin-left:21px;margin-top:270px" placeholder="how many Piece" min="1" max="5" ng-model="piece">
+								<ng-click ng-click="selectItem(item.name,piece)">
+										<a ><img ng-src="{{item.image}}" alt="Image" height="200px" width="200px"></a>
+										<div>
+											<a >{{item.name}}</a>
+											<p >
+												Lorem ipsum &#36;{{item.price}}
+											
+											</p>
+										</div>
+								</ng-click >
 							</li>			
 						</ul><!heeeeeeeeeeeerrrrrreeeeeeeeeeeee>
 					</div>

@@ -26,3 +26,20 @@ angular.module('u.services', [])
   }
 
 })
+
+.factory('Order', function ($http) {
+  var selectItem= function (info) {
+    return $http({
+      method: 'POST',
+      url: '/api/selectItem',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+  
+  return {
+    selectItem:selectItem
+      }
+
+})
