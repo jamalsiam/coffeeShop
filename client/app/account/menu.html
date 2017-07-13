@@ -4,20 +4,20 @@
 					<span>Lorem ipsum dolor sit amet.</span>
 				</div>
 				<div>
-					<a href="menu.html" class="whatshot">What&#39;s Hot</a>
+					<a  class="whatshot">What&#39;s Hot</a>
 					<div>
 						<ul>
-							<li>
-								<a href="index.html"><img src="images/coffee1.jpg" alt="Image"></a>
+							<li ng-repeat="item in items">
+								<a ><img ng-src="{{item.image}}" alt="Image"></a>
 								<div>
-									<a href="index.html">Lorem ipsum</a>
+									<a >{{item.name}}</a>
 									<p>
-										Lorem ipsum &#36;0.00
+										Lorem ipsum &#36;{{item.price}}
 									</p>
 								</div>
 							</li>
 						
-							</li>
+							
 						</ul><!heeeeeeeeeeeerrrrrreeeeeeeeeeeee>
 					</div>
 				</div>

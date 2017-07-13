@@ -3,7 +3,6 @@ angular.module('u.services', [])
 
 .factory('Item', function ($http) {
   var addItem= function (info) {
-  //console.log(signup);
     return $http({
       method: 'POST',
       url: '/api/addItem',
@@ -12,8 +11,18 @@ angular.module('u.services', [])
       return res.data;
     });
   };
+  var getItem= function () {
+    return $http({
+      method: 'GET',
+      url: '/api/getItem',
+      
+    }).then(function (res) {
+      return res.data;
+    });
+  };
   return {
-    addItem:addItem
+    addItem:addItem,
+    getItem:getItem
   }
 
 })

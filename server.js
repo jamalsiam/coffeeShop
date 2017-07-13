@@ -19,7 +19,7 @@ var db = mongoose.connection;
 
 
 
-//app.get('/api/books',handlers.handelBook.showbook);
+	app.get('/api/getItem',handlers.handleItem.getItem);
 	app.post('/api/addItem',handlers.handleItem.addItem);
 
 
