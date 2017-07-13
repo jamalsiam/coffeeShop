@@ -1,1 +1,11 @@
-			
+    
+
+<center>
+      <img  ng-src="{{stepsModel}}"   height="200" width="200" />
+    
+    <input type='file' ng-if="!stepsModel" ng-model-instant onchange="angular.element(this).scope().imageUpload(event)" multiple /><br>
+    <input type='text' placeholder="item name" ng-model="itemName"><br>
+    <input type='text' placeholder="price" ng-model="price"><br>
+    {{msg}}<br>
+    <input type="submit" ng-click="addItem(stepsModel,itemName,price)" value="add">
+    </center>			
