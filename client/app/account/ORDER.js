@@ -15,6 +15,11 @@ $scope.selectItem=function(itemName,piece){
 	if(!piece)
 	piece=1;
 	
+	console.log({
+		tableNumber:number,
+		name:itemName,
+		piece:piece
+	})
 	Order.selectItem({
 		tableNumber:number,
 		name:itemName,

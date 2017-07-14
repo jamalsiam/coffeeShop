@@ -21,6 +21,7 @@ var db = mongoose.connection;
 
 	app.get('/api/getItem',handlers.handleItem.getItem);
 	app.post('/api/addItem',handlers.handleItem.addItem);
+	app.post('/api/selectItem',handlers.handleOrder.selectItem);
 
 
 app.listen(process.env.PORT || 8000);
