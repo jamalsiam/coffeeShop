@@ -9,7 +9,7 @@
 						<ul>
 							<li ng-repeat="item in items">
 								<input type="number" style=" position: absolute;margin-left:21px;margin-top:270px" placeholder="how many Piece" min="1" max="5" ng-model="piece">
-								<ng-click ng-click="selectItem(item.name,piece)">
+								<ng-click ng-click="selectItem(item.name,piece,item.price)">
 										<a ><img ng-src="{{item.image}}" alt="Image" height="200px" width="200px"></a>
 										<div>
 											<a >{{item.name}}</a>

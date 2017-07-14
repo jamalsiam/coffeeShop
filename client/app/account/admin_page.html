@@ -1,6 +1,37 @@
     
 
 <center>
+<table style="width:90%; color:black" border="1">
+  <tr>
+    <th>table number</th>
+    <th>item name</th> 
+    <th>piece</th>
+  </tr>
+  <tr ng-repeat="item in listOrder">
+    <td style="text-align: center;">{{item.tableNumber}}</td>
+    <td style="text-align: center;">{{item.name}}</td>
+    <td style="text-align: center;">{{item.piece}}  </td>
+    <td style="text-align: center;"><button style="width:50%;background-color:#8DFF84" ng-click="removeItem(item._id,true,item.tableNumber,item.name,item.piece,item.price)">finish</button><button style="width:50%;background-color:#FC7075" ng-click="removeItem(item._id,false,item.tableNumber,item.name,item.piece,item.price)">undo</button> </td>
+  </tr>
+
+</table>
+
+<hr>
+<table style="width:90%; color:black" border="1">
+  <tr>
+    <th>table number</th>
+    <th>piece</th> 
+    <th>total</th>
+  </tr>
+  <tr ng-repeat="Table in listTables | unique: ">
+    <td style="text-align: center;">{{Table.tableNumber}}</td>
+    <td style="text-align: center;">{{Table.piece}}</td>
+    <td style="text-align: center;">{{Table.total}}</td>
+    <td style="text-align: center;"><button style="width:100%;" ng-click="removeTable(Table._id)">finish</button> </td>
+  </tr>
+
+</table>
+	<hr>
       <img  ng-src="{{stepsModel}}"   height="200" width="200" />
     
     <input type='file' ng-if="!stepsModel" ng-model-instant onchange="angular.element(this).scope().imageUpload(event)" multiple /><br>

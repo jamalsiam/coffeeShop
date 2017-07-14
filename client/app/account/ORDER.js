@@ -11,19 +11,14 @@ angular.module('order' , [])
 	})
 
 
-$scope.selectItem=function(itemName,piece){
+$scope.selectItem=function(itemName,piece,price){
 	if(!piece)
 	piece=1;
-	
-	console.log({
-		tableNumber:number,
-		name:itemName,
-		piece:piece
-	})
 	Order.selectItem({
 		tableNumber:number,
 		name:itemName,
-		piece:piece
+		piece:piece,
+		price:price
 	})
 
 }

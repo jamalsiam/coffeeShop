@@ -1,6 +1,7 @@
 angular.module('u.services', [])
 
 
+
 .factory('Item', function ($http) {
   var addItem= function (info) {
     return $http({
@@ -37,9 +38,45 @@ angular.module('u.services', [])
       return res.data;
     });
   };
+
+  var getSelectedItem= function () {
+    return $http({
+      method: 'GET',
+      url: '/api/getSelectedItem',
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+
+  var removeItem=function(info){
+    return $http({
+      method: 'POST',
+      url: '/api/removeItem',
+      data: info
+    }).then(function (res) {
+      return res.data;
+    });
+  }
   
   return {
-    selectItem:selectItem
+    selectItem:selectItem,
+    getSelectedItem:getSelectedItem,
+    removeItem:removeItem
       }
+
+})
+
+.factory('Bill', function ($http) {
+  var getAllTable= function () {
+    return $http({
+      method: 'GET',
+      url: '/api/getAllTables'
+    }).then(function (res) {
+      return res.data;
+    });
+  };
+  return {
+    getAllTable:getAllTable
+  }
 
 })
