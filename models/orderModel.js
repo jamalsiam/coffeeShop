@@ -9,7 +9,9 @@ tableNumber:{
     required: true,
     // unique: true
   },
-  name:{
+item: [
+  {
+name:{
     type: String,
     required: true,
     // unique: true
@@ -24,5 +26,6 @@ tableNumber:{
     //required: true,
     // unique: true
   }
+  }]
 });
 module.exports = mongoose.model('Ordering', orderSchema);

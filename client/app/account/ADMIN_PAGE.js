@@ -62,7 +62,8 @@ $scope.imageUpload = function(event){
     .then(function(dataa){
    // $scope.listTables=dataa;
       var record=dataa;
-      var js=[]
+      var tlist=[];
+      var fixedTList=[];
     for (x in record) { 
       var total=0;
       var piece=0;
@@ -76,13 +77,14 @@ $scope.imageUpload = function(event){
       }
 
      
-      js.push({tableNumber:record[x].tableNumber,
+      tlist.push({tableNumber:record[x].tableNumber,
               total:total,
               piece:piece})
-    }
+    
+  }
 
-      console.log(js)
-       $scope.listTables=js;
+      // console.log(fixedTList)
+      //  $scope.listTables=fixedTList;
     })
    }
 
