@@ -1,10 +1,8 @@
 var Item = require('./models/itemModel.js');
-var Bill = require('./models/billModel.js');
 var Order = require('./models/orderModel.js');
 
 
 module.exports.handleItem = {
-
 	addItem: function(req,res){	
 		Item.create(req.body)
 		res.json("s")
@@ -25,30 +23,20 @@ module.exports.handleOrder = {
 		.exec(function (err, items) {
 			if (items) {
 				var record=items;
-
 				record.item.push({ name:req.body.name,
 					piece:req.body.piece,
 					price:req.body.price })
-			//Order.update(record)
-
-		Order.create(record)
-
-
-
-
-
-		} else
-		{
-			Order.create(
-				{ tableNumber: req.body.tableNumber , 
-					item: [{ name:req.body.name,
-						piece:req.body.piece,
-						price:req.body.price }] }
-						);
-
-
-		}
-	})
+				Order.create(record)
+			} else
+			{
+				Order.create(
+					{ tableNumber: req.body.tableNumber , 
+						item: [{ name:req.body.name,
+							piece:req.body.piece,
+							price:req.body.price }] }
+							);
+			}
+		})
 	},
 	getSelectedItem:function(req,res){	
 		Order.find()
@@ -89,16 +77,3 @@ module.exports.handleOrder = {
 }
 
 
-module.exports.handleBill = {
-
-	getAllTables: function(req,res){	
-		Bill.find()
-		.exec(function (err, Table) {
-			res.json(Table)
-		} 
-		)
-	},
-	deleteTable:function(req,res){	
-
-	}
-}	

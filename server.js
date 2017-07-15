@@ -21,11 +21,9 @@ var db = mongoose.connection;
 
 	app.get('/api/getItem',handlers.handleItem.getItem);
 	app.post('/api/addItem',handlers.handleItem.addItem);
-
 	app.post('/api/selectItem',handlers.handleOrder.selectItem);
 	app.get('/api/getSelectedItem',handlers.handleOrder.getSelectedItem);
 	app.post('/api/removeItem',handlers.handleOrder.removeItem);
-	app.get('/api/getAllTables',handlers.handleBill.getAllTables);
 
 app.listen(process.env.PORT || 8000);
 console.log('Running on port 8000...');
