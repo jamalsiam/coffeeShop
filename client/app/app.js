@@ -15,10 +15,7 @@ angular.module('user',
       templateUrl: 'app/account/main.html',
       controller:  'mainController'
     })
-  .when('/', {
-      templateUrl: 'app/index.html',
-      controller:  'indexController'
-    })
+  
     .when('/menu', {
       templateUrl: 'app/account/menu.html',
       controller:  'menuController'
